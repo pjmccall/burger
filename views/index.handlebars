@@ -1,0 +1,30 @@
+<img src="https://image.shutterstock.com/image-vector/hamburger-cartoon-vector-illustration-isolated-260nw-257426938.jpg">
+
+<h1>Eat-Da-Burger!</h1>
+
+<form class="create-form">
+<h5 for="ca">Enter the type of burger you want to eat.</h5>
+  <div class="form-group">
+    <input type="text" id="ca" name="burger_name">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Burgers Ready to be Devoured!</h3>
+<ul class="menu">
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h3>Burgers in Your Belly</h3>
+<ul class="belly">
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
